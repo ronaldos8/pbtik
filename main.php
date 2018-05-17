@@ -1,8 +1,8 @@
-<?php echo $__head; ?>
+<?php include $__head; ?>
 
-<?php echo $__header; ?>
+<?php include $__header; ?>
 
-<?php echo $__sidebar; ?>
+<?php include $__sidebar; ?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -24,13 +24,13 @@
       <!--------------------------
         | Your Page Content Here |
         -------------------------->
-        <?php echo $__content; ?>
+        <?php include $__content; ?>
     </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
 
-  <?php echo $__footer; ?>
+  <?php include $__footer; ?>
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
