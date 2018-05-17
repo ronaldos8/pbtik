@@ -28,7 +28,11 @@
 
 
         
-			<table style="margin-top:20px;">
+			<table style="margin-top:70px;" class="table table-borderless">
+			
+				<tr>
+					<td style="padding-top:20px; padding-bottom:20px; font-size:20px;"><b>List Test</b></td>
+				</tr>
 			<?php
 
         	include "connect.php";

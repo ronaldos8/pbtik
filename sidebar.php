@@ -35,8 +35,8 @@
         <li class="active"><a href="index.php"><i class="fa fa-link"></i> <span>DASHBOARD</span></a></li>
         <li><a href="learn.php"><i class="fa fa-link"></i> <span>LEARN</span></a></li>
         <li><a href="test.php"><i class="fa fa-link"></i> <span>TEST</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>SUGGESTION</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>SETTING</span></a></li>
+        <li><a href="suggestion.php"><i class="fa fa-link"></i> <span>SUGGESTION</span></a></li>
+        <li><a href="setting.php"><i class="fa fa-link"></i> <span>SETTING</span></a></li>
         <!-- <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
             <span class="pull-right-container">

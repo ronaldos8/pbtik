@@ -41,9 +41,12 @@
 
         <form action="cekjawaban.php" method="POST">
         
-          <table width="400px;">
+          <table width="400px;" style="margin-top:50px;" class="table table-borderless">
             <tr>
-              <td><?php echo $data['pertanyaan']; ?></td>  
+              <td style="font-size:16px;"><b>Soal</b></td>  
+            </tr>
+            <tr>
+              <td style="padding-top:20px; padding-bottom:50px;"><?php echo $data['pertanyaan']; ?></td>  
             </tr>
             <tr>
               <td><input type="radio" name="jawaban" value="<?php echo $data['opsia']; ?>"> <?php echo $data['opsia']; ?></td>
@@ -59,7 +62,7 @@
             </tr>
             <tr>
                   <input type="hidden" name="idsoal" value="<?php echo $data['id']; ?>">
-              <td><input type="submit" name="submit" value="Submit"/></td>
+              <td style="padding-top:50px;"><input type="submit" class="btn btn-primary" name="submit" value="Next"/></td>
             </tr>
           </table>
 		

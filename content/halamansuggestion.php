@@ -28,11 +28,11 @@
         -------------------------->
         <!--<?php echo $__content; ?>-->
 
-        <table style="margin-top:70px;margin-left:20px;" class="table table-borderless table-hover">
-            
+        <table style="margin-top:70px;" class="table table-borderless table-hover">
               <tr>
-                <td style="padding-top:20px; padding-bottom:20px; font-size:20px;"><b>List Materi</b></td>
-                <td style="padding-top:20px; padding-left:50px; padding-bottom:20px; font-size:20px;"><b>Kemampuan</b></td>
+                <td style="padding-bottom:20px; font-size:20px;"><b>Materi</b></td>
+                <td style="padding-left:20px; padding-bottom:20px; font-size:20px;"><b>Requirement</b></td>
+                <td style="padding-left: 30px; padding-bottom:20px; font-size:20px;"><b>Kesiapan Siswa</b></td>
               </tr>
             <?php
 
@@ -45,14 +45,57 @@
             
             while($data = mysqli_fetch_array($hasil)) {
               $id_materi = $data['id'];
-              $query2 = "select * from jawabsiswa where id_materi=$id_materi";
-              $hasil2 = mysqli_query($connect, $query2);
-              $data2 = mysqli_fetch_array($hasil2);
+              
           ?>
+              
               <tr>
                 <td style="padding-top:20px;"><a href="soal.php?id=<?php echo $data['id']; ?>&no=1"> <?php echo $data['materi']; ?> </a></td>
-                <td style="padding-top:20px; padding-left:50px;"><?php echo $data2['kesimpulan']; ?></td>
+                <td style="padding-top:20px; padding-left:20px;">
+                  <?php
+
+                    $jumBisa = 0;
+                    $counter = 0;
+
+                    $query2 = "select a.id_dependen, b.materi, c.kesimpulan from materi b, materidependansi a, jawabsiswa c where a.id_materi=$id_materi and a.id_dependen=b.id and c.id_materi=b.id;";
+                    $hasil2 = mysqli_query($connect, $query2);
+                    
+
+                    while($data2 = mysqli_fetch_array($hasil2)) {
+                      echo $data2['materi'];
+                      echo ",";
+                      
+                      if($data2['kesimpulan'] == "Sudah Bisa") {
+                        $jumBisa += 1;
+                      }
+
+                      $counter += 1;
+                    }
+
+                    if(is_null($data2) && $counter == 0) {
+                      echo "None";
+                    }
+
+
+                  ?>
+                </td>
+                <td style="padding-left:30px; padding-top:20px;">
+                  <?php
+                    
+                    if($counter == 0) {
+                      $counter = 1;
+                      $jumBisa = 1;
+                    }
+
+
+                    $persentase = ($jumBisa / $counter) * 100;
+
+                    echo $persentase;
+                    echo "%";
+
+                  ?>
+                </td>
               </tr>
+
               <?php
             }
               

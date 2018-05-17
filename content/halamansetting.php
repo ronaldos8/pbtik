@@ -28,36 +28,17 @@
         -------------------------->
         <!--<?php echo $__content; ?>-->
 
-        <table style="margin-top:70px;margin-left:20px;" class="table table-borderless table-hover">
-            
-              <tr>
-                <td style="padding-top:20px; padding-bottom:20px; font-size:20px;"><b>List Materi</b></td>
-                <td style="padding-top:20px; padding-left:50px; padding-bottom:20px; font-size:20px;"><b>Kemampuan</b></td>
-              </tr>
-            <?php
+        <?php
+          $query = "truncate table jawabsiswa";
+          $hasil = mysqli_query($connect, $query);
+          
 
-
-            $query = "select * from materi";
-            $hasil = mysqli_query($connect, $query);
-
-
-            
-            
-            while($data = mysqli_fetch_array($hasil)) {
-              $id_materi = $data['id'];
-              $query2 = "select * from jawabsiswa where id_materi=$id_materi";
-              $hasil2 = mysqli_query($connect, $query2);
-              $data2 = mysqli_fetch_array($hasil2);
-          ?>
-              <tr>
-                <td style="padding-top:20px;"><a href="soal.php?id=<?php echo $data['id']; ?>&no=1"> <?php echo $data['materi']; ?> </a></td>
-                <td style="padding-top:20px; padding-left:50px;"><?php echo $data2['kesimpulan']; ?></td>
-              </tr>
-              <?php
-            }
-              
-          ?>
-        </table>
+          $query = "insert into jawabsiswa values
+  (null, 1, 0, 0, 0, 'Belum bisa'),
+  (null, 2, 0, 0, 0, 'Belum bisa'),
+  (null, 3, 0, 0, 0, 'Belum bisa');";
+          $hasil = mysqli_query($connect, $query);
+        ?>
 			  
 
     </section>

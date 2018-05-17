@@ -56,12 +56,14 @@
     		if($counter >= 2 || $data['no_soal'] >= 9) {
 
                 $nilai = $data2['hasil_mudah'] + $data2['hasil_sedang'] + $data2['hasil_sulit']; 
+                var_dump($nilai);
+                var_dump($kesimpulan);
+                var_dump($idmateri);
 
-                if($nilai > 5) {
+                if($nilai >= 5) {
                     
                     $kesimpulan = "Sudah Bisa";
-                    var_dump($kesimpulan);
-                    var_dump($idmateri);
+                    
                     $query3 = "UPDATE jawabsiswa SET kesimpulan='$kesimpulan' WHERE id_materi=$idmateri";
                     $hasil3 = mysqli_query($connect, $query3);
                     var_dump($hasil3);
