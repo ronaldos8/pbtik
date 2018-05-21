@@ -45,7 +45,7 @@
             $bg = 'bg-green';
           }
 
-          if ($persentase >= 100) {
+          if ($persentase >= 100 && $data2['kesimpulan'] != "Sudah Bisa") {
             
       ?>
           <div class="attachment-block clearfix">
@@ -59,8 +59,7 @@
                     <b><?php echo $data['materi']; ?></b>
                   </h4>
                   <div class="attachment-text">
-                    Description about the attachment can be placed here.
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry...
+                     <?php echo $data['Deskripsi']; ?>
                     <br>
                     <div class="row">
                       <div class="col-md-12">
@@ -77,7 +76,7 @@
                 <div class="col-md-2" align="right">
                   <div class="pull-right">
                     <?php
-                      if ($persentase >= 100) {
+                      if ($persentase >= 100 && $data2['kesimpulan'] != "Sudah Bisa") {
                     ?>
                         <a href="soal.php?id=<?php echo $data['id']; ?>&no=1" title="More">
                           <span class="info-box-icon" style="background: none;"><i class="fa fa-arrow-right"></i></span>
@@ -151,8 +150,7 @@
                     <b><?php echo $data['materi']; ?></b>
                   </h4>
                   <div class="attachment-text">
-                    Description about the attachment can be placed here.
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry...
+                     <?php echo $data['Deskripsi']; ?>
                     <br>
                     <div class="row">
                       <div class="col-md-12">
@@ -169,7 +167,7 @@
                 <div class="col-md-2" align="right">
                   <div class="pull-right">
                     <?php
-                      if ($persentase >= 100) {
+                      if ($persentase >= 100 && $data2['kesimpulan'] != "Sudah Bisa") {
                     ?>
                         <a href="soal.php?id=<?php echo $data['id']; ?>&no=1" title="More">
                           <span class="info-box-icon" style="background: none;"><i class="fa fa-arrow-right"></i></span>

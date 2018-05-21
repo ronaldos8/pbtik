@@ -53,7 +53,9 @@
     		$query3 = "UPDATE jawabsiswa SET hasil_sulit=$counter WHERE id_materi=$idmateri";
             $hasil3 = mysqli_query($connect, $query3);
 
-    		if($counter >= 2 || $data['no_soal'] >= 9) {
+            $nosoal = $data['no_soal'];
+
+    		if($counter >= 2 || $nosoal > 9) {
 
                 $nilai = $data2['hasil_mudah'] + $data2['hasil_sedang'] + $data2['hasil_sulit']; 
                 var_dump($nilai);

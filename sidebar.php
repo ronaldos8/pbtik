@@ -42,7 +42,7 @@
         <li <?php echo (isset($v_active) && $v_active == 'dashboard') ? "class='active'" : ""; ?>><a href="index.php"><i class="fa fa-link"></i> <span>DASHBOARD</span></a></li>
         <li <?php echo (isset($v_active) && $v_active == 'learn') ? "class='active'" : ""; ?>><a href="learn.php"><i class="fa fa-link"></i> <span>LEARN</span></a></li>
         <li <?php echo (isset($v_active) && $v_active == 'test') ? "class='active'" : ""; ?>><a href="test.php"><i class="fa fa-link"></i> <span>TEST</span></a></li>
-        <li <?php echo (isset($v_active) && $v_active == 'suggestion') ? "class='active'" : ""; ?>><a href="suggestion.php"><i class="fa fa-link"></i> <span>SUGGESTION</span></a></li>
+        <!-- <li <?php echo (isset($v_active) && $v_active == 'suggestion') ? "class='active'" : ""; ?>><a href="suggestion.php"><i class="fa fa-link"></i> <span>SUGGESTION</span></a></li> -->
         <li <?php echo (isset($v_active) && $v_active == 'setting') ? "class='active'" : ""; ?>><a href="setting.php"><i class="fa fa-link"></i> <span>SETTING</span></a></li>
         <!-- <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>

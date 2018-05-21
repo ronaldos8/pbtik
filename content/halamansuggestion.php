@@ -15,6 +15,39 @@
           $query2 = "select * from jawabsiswa where id_materi=$id_materi";
           $hasil2 = mysqli_query($connect, $query2);
           $data2 = mysqli_fetch_array($hasil2);
+
+
+          $jumBisa = 0;
+          $counter = 0;
+          $query3 = "select a.id_dependen, b.materi, c.kesimpulan from materi b, materidependansi a, jawabsiswa c where a.id_materi=$id_materi and a.id_dependen=b.id and c.id_materi=b.id;";
+          $hasil3 = mysqli_query($connect, $query3);
+          
+          while($data3 = mysqli_fetch_array($hasil3)) {
+            if($data3['kesimpulan'] == "Sudah Bisa") {
+              $jumBisa += 1;
+            }
+            $counter += 1;
+          }
+          if(is_null($data3) && $counter == 0) {
+            // echo "None";
+          }
+
+          if($counter == 0) {
+            $counter = 1;
+            $jumBisa = 1;
+          }
+          $persentase = ($jumBisa / $counter) * 100;
+
+          if ($persentase < 100) {
+            $icon = "fa-lock";
+            $bg = 'bg-red';
+          }else {
+            $icon = "fa-unlock-alt";
+            $bg = 'bg-green';
+          }
+
+          if ($persentase >= 100 && $data2['kesimpulan'] != "Sudah Bisa") {
+
       ?>
           <div class="attachment-block clearfix">
             <img class="attachment-img" src="dist/img/photo1.png" alt="Attachment Image">
@@ -25,8 +58,7 @@
               </h4>
 
               <div class="attachment-text">
-                Description about the attachment can be placed here.
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry...
+                 <?php echo $data['Deskripsi']; ?>
                 <br>
                 <a href="soal.php?id=<?php echo $data['id']; ?>&no=1">more</a>
               </div>
@@ -35,6 +67,7 @@
             <!-- /.attachment-pushed -->
           </div>
       <?php
+          }
         }
               
       ?>
@@ -61,8 +94,7 @@
               </h4>
 
               <div class="attachment-text">
-                Description about the attachment can be placed here.
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry...
+                <?php echo $data['Deskripsi']; ?>
                 <br>
                 <a href="soal.php?id=<?php echo $data['id']; ?>&no=1">more</a>
               </div>
