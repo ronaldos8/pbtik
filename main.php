@@ -128,7 +128,10 @@
 <script src="dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <!-- <script src="dist/js/demo.js"></script> -->
+<script src="bower_components/ckeditor/ckeditor.js"></script>
+<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
 <!-- page script -->
+
 <script>
   $(function () {
     "use strict";
@@ -193,6 +196,10 @@
       checkboxClass: 'icheckbox_flat-green',
       radioClass   : 'iradio_flat-green'
     })
+
+    CKEDITOR.replace('editor1');
+
+    $('.select2').select2();
 </script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the

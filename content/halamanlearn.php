@@ -1,3 +1,12 @@
+<?php
+  if ($_SESSION['level'] == 1) {
+?>
+    <div align="right">
+      <p><a href="tambahmateri.php" class="btn btn-info">Tambah Materi</a></p>
+    </div>
+<?php
+  }
+?>
 <div class="nav-tabs-custom">
   <ul class="nav nav-tabs">
     <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="true">Recomended</a></li>
@@ -53,13 +62,13 @@
 
             <div class="attachment-pushed">
               <h4 class="attachment-heading">
-                <a href="download.php?materi=<?php echo $data['materi']; ?>.pdf"><?php echo $data['materi']; ?></a>
+                <a href="materi.php?id=<?php echo $data['id']; ?>"><?php echo $data['materi']; ?></a>
               </h4>
 
               <div class="attachment-text">
-                <?php echo $data['Deskripsi']; ?>
+                <?php echo $data['deskripsi']; ?>
                 <br>
-                <a href="soal.php?id=<?php echo $data['id']; ?>&no=1">more</a>
+                <a href="materi.php?id=<?php echo $data['id']; ?>">more</a>
               </div>
               <!-- /.attachment-text -->
             </div>
@@ -89,13 +98,13 @@
 
             <div class="attachment-pushed">
               <h4 class="attachment-heading">
-                <a href="download.php?materi=<?php echo $data['materi']; ?>.pdf"><?php echo $data['materi']; ?></a>
+                <a href="materi.php?id=<?php echo $data['id']; ?>"><?php echo $data['materi']; ?></a>
               </h4>
 
               <div class="attachment-text">
-                <?php echo $data['Deskripsi']; ?>
+                <?php echo $data['deskripsi']; ?>
                 <br>
-                <a href="soal.php?id=<?php echo $data['id']; ?>&no=1">more</a>
+                <a href="materi.php?id=<?php echo $data['id']; ?>"><?php echo $data['materi']; ?></a>
               </div>
               <!-- /.attachment-text -->
             </div>

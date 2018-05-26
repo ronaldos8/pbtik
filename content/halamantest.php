@@ -1,3 +1,12 @@
+<?php
+  if ($_SESSION['level'] == 1) {
+?>
+    <div align="right">
+      <p><a href="tambahsoal.php" class="btn btn-info">Tambah Soal</a></p>
+    </div>
+<?php
+  }
+?>
 <div class="nav-tabs-custom">
   <ul class="nav nav-tabs">
     <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="true">Recomended</a></li>
@@ -59,7 +68,7 @@
                     <b><?php echo $data['materi']; ?></b>
                   </h4>
                   <div class="attachment-text">
-                     <?php echo $data['Deskripsi']; ?>
+                     <?php echo $data['deskripsi']; ?>
                     <br>
                     <div class="row">
                       <div class="col-md-12">
@@ -78,7 +87,7 @@
                     <?php
                       if ($persentase >= 100 && $data2['kesimpulan'] != "Sudah Bisa") {
                     ?>
-                        <a href="soal.php?id=<?php echo $data['id']; ?>&no=1" title="More">
+                        <a href="soal.php?id=<?php echo $data['id']; ?>&no=1" title="Go">
                           <span class="info-box-icon" style="background: none;"><i class="fa fa-arrow-right"></i></span>
                         </a>
                     <?php
@@ -150,7 +159,7 @@
                     <b><?php echo $data['materi']; ?></b>
                   </h4>
                   <div class="attachment-text">
-                     <?php echo $data['Deskripsi']; ?>
+                     <?php echo $data['deskripsi']; ?>
                     <br>
                     <div class="row">
                       <div class="col-md-12">
@@ -169,7 +178,7 @@
                     <?php
                       if ($persentase >= 100 && $data2['kesimpulan'] != "Sudah Bisa") {
                     ?>
-                        <a href="soal.php?id=<?php echo $data['id']; ?>&no=1" title="More">
+                        <a href="soal.php?id=<?php echo $data['id']; ?>&no=1" title="Go">
                           <span class="info-box-icon" style="background: none;"><i class="fa fa-arrow-right"></i></span>
                         </a>
                     <?php
